@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .font-body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.8s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    
+    .ornament {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Cpath d='M0,25 Q50,0 100,25 T200,25' fill='none' stroke='%23b8860b' stroke-width='1.5' opacity='0.6'/%3E%3Ccircle cx='100' cy='25' r='4' fill='%23b8860b' opacity='0.6'/%3E%3Ccircle cx='50' cy='12' r='2' fill='%23b8860b' opacity='0.4'/%3E%3Ccircle cx='150' cy='12' r='2' fill='%23b8860b' opacity='0.4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    
+    .gallery-item {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+    
+    .glass-card {
+      backdrop-filter: blur(10px);
+    }
+    
+    .leaf-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,50 Q25,20 50,10 Q75,20 90,50 Q75,80 50,90 Q25,80 10,50' fill='none' stroke='%23d4af37' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+    }
+  .photo-hover {
+    transition: transform 0.5s ease;
+  }
+
+  .photo-hover img {
+    transition: transform 0.6s ease;
+  }
+
+  .photo-hover:hover img {
+    transform: scale(1.08);
+  }
+
+  .photo-hover:hover {
+    transform: translateY(-4px);
+  }
+
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full font-body animate-fade-in">
+  <div id="app" class="h-full w-full overflow-auto scroll-smooth leaf-pattern" style="background-color: #faf8f5;"><!-- Couple Section -->
+   <section id="couple" class="py-20 px-4" style="background-color: #f5f0e8;">
+    <div class="max-w-4xl mx-auto text-center">
+     <p class="font-display text-xl italic mb-2" style="color: #b8860b;">Bismillahirrahmanirrahim</p>
+     <p class="font-body text-sm leading-relaxed max-w-2xl mx-auto mb-16" style="color: #666;">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami</p>
+     <div class="grid md:grid-cols-2 gap-12 md:gap-8"><!-- Groom -->
+      <div class="animate-slide-up">
+       <div class="relative inline-block mb-6">
+        <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mx-auto border-4 shadow-xl" style="border-color: #b8860b;">
+        <img src="images/rizki.jpeg" alt="Mempelai Pria" class="w-full h-full object-cover">
+         <svg class="w-full h-full" viewbox="0 0 200 200" fill="#e8e0d5"><rect width="200" height="200" fill="#e8e0d5" /> <circle cx="100" cy="70" r="35" fill="#c4b8a8" /> <ellipse cx="100" cy="160" rx="50" ry="45" fill="#c4b8a8" /> <text x="100" y="105" text-anchor="middle" font-size="12" fill="#8b7355">
+          </text>
+         </svg>
+        </div>
+        <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #b8860b;"><span class="text-2xl">🤵</span>
+        </div>
+       </div>
+       <h3 id="groom-name-display" class="font-display text-3xl md:text-4xl font-semibold mb-2" style="color: #2c2c2c;">Moh. Rizki Setiawan</h3>
+       <p class="font-body text-sm mb-4" style="color: #b8860b;">Putra pertama dari</p>
+       <p id="groom-parents-display" class="font-body text-base" style="color: #666;">Bapak Syahrul &amp; Ibu Suyanti</p>
+      </div><!-- Bride -->
+      <div class="animate-slide-up delay-200">
+       <div class="relative inline-block mb-6">
+        <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mx-auto border-4 shadow-xl"
+     style="border-color: #b8860b;">
+  <img src="images/ayu.jpeg"
+       alt="Mempelai Wanita"
+       class="w-full h-full object-cover">
+         <svg class="w-full h-full" viewbox="0 0 200 200" fill="#e8e0d5"><rect width="200" height="200" fill="#e8e0d5" /> <circle cx="100" cy="70" r="35" fill="#c4b8a8" /> <ellipse cx="100" cy="160" rx="50" ry="45" fill="#c4b8a8" /> <text x="100" y="105" text-anchor="middle" font-size="12" fill="#8b7355">
+           Foto Wanita
+          </text>
+         </svg>
+        </div>
+        <div class="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #b8860b;"><span class="text-2xl">👰</span>
+        </div>
+       </div>
+       <h3 id="bride-name-display" class="font-display text-3xl md:text-4xl font-semibold mb-2" style="color: #2c2c2c;">Pratiwi Ayu Safitri</h3>
+       <p class="font-body text-sm mb-4" style="color: #b8860b;">Putri Ke-Empat dari</p>
+       <p id="bride-parents-display" class="font-body text-base" style="color: #666;">Bapak Bambang S.s &amp; Ibu Sri Mujiati</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Event Details -->
+   <section id="event" class="py-20 px-4" style="background-color: #faf8f5;">
+    <div class="max-w-5xl mx-auto text-center">
+     <p class="font-body text-sm tracking-[0.2em] uppercase mb-2" style="color: #8b7355;">Save The Date</p>
+     <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4" style="color: #2c2c2c;">Waktu &amp; Tempat</h2>
+     <div class="ornament h-10 w-40 mx-auto mb-12"></div><!-- Couple Photos with Floral Frame -->
+     <div class="flex justify-center items-center mb-16 animate-fade-in">
+  <div class="relative photo-hover">
+
+    <!-- FOTO MEMPELAI (TENGAH & BESAR) -->
+    <div
+      class="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 shadow-2xl"
+      style="border-color:#b8860b;"
+    >
+      <img
+        src="images/ayu5.jpeg"
+        alt="Mempelai"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- ORNAMEN ICON (OPSIONAL) -->
+    <div
+      class="absolute -bottom-3 -right-3 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+      style="background-color:#b8860b;"
+    >
+      <span class="text-2xl">💍</span>
+    </div>
+
+  </div>
+</div>
+     <div class="grid md:grid-cols-2 gap-8 mb-12"><!-- Akad -->
+      <div class="glass-card rounded-2xl p-8 shadow-lg animate-slide-up relative overflow-hidden" style="background-color: rgba(255,255,255,0.8); border: 1px solid rgba(184,134,11,0.2);"><!-- Decorative flowers -->
+       <svg class="absolute top-2 right-2 w-16 h-16 opacity-10" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="12" fill="#b8860b" /> <circle cx="22" cy="26" r="8" fill="#d4af37" /> <circle cx="38" cy="26" r="8" fill="#d4af37" /> <circle cx="26" cy="38" r="8" fill="#d4af37" /> <circle cx="34" cy="38" r="8" fill="#d4af37" />
+       </svg>
+       <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center relative z-10" style="background-color: rgba(184,134,11,0.1);"><span class="text-3xl">💍</span>
+       </div>
+       <h3 class="font-display text-3xl font-semibold mb-4" style="color: #2c2c2c;">Akad Nikah</h3>
+       <div class="space-y-3" style="color: #666;">
+        <div class="flex items-center justify-center gap-2"><span class="text-lg"></span>
+         <p id="akad-date" class="font-body">Minggu, 12 April 2026</p>
+        </div>
+        <div class="flex items-center justify-center gap-2"><span class="text-lg">🕐</span>
+         <p id="akad-time" class="font-body font-medium text-lg" style="color: #b8860b;">09:00 WIB</p>
+        </div>
+       </div>
+      </div><!-- Resepsi -->
+      <div class="glass-card rounded-2xl p-8 shadow-lg animate-slide-up delay-200 relative overflow-hidden" style="background-color: rgba(255,255,255,0.8); border: 1px solid rgba(184,134,11,0.2);"><!-- Decorative flowers -->
+       <svg class="absolute top-2 right-2 w-16 h-16 opacity-10" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="12" fill="#b8860b" /> <circle cx="22" cy="26" r="8" fill="#d4af37" /> <circle cx="38" cy="26" r="8" fill="#d4af37" /> <circle cx="26" cy="38" r="8" fill="#d4af37" /> <circle cx="34" cy="38" r="8" fill="#d4af37" />
+       </svg>
+       <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center relative z-10" style="background-color: rgba(184,134,11,0.1);"><span class="text-3xl">🎊</span>
+       </div>
+       <h3 class="font-display text-3xl font-semibold mb-4" style="color: #2c2c2c;">Resepsi</h3>
+       <div class="space-y-3" style="color: #666;">
+        <div class="flex items-center justify-center gap-2"><span class="text-lg"></span>
+         <p id="resepsi-date" class="font-body">Minggu, 12 April 2026</p>
+        </div>
+        <div class="flex items-center justify-center gap-2"><span class="text-lg">🕐</span>
+         <p id="resepsi-time" class="font-body font-medium text-lg" style="color: #b8860b;">11:00 WIB - Selesai</p>
+        </div>
+       </div>
+      </div>
+     </div><!-- Venue with Map -->
+     <div class="glass-card rounded-2xl p-8 shadow-lg animate-slide-up delay-300" style="background-color: rgba(255,255,255,0.8); border: 1px solid rgba(184,134,11,0.2);">
+      <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background-color: rgba(184,134,11,0.1);"><span class="text-3xl">📍</span>
+      </div>
+      <h3 class="font-display text-3xl font-semibold mb-2" style="color: #2c2c2c;">Lokasi Acara</h3>
+      <h4 id="venue-name" class="font-display text-2xl font-medium mb-2" style="color: #b8860b;">Rumah Mempelai </h4>
+      <p id="venue-address" class="font-body mb-6" style="color: #666;">Minggu, 12 April 2026 </p><!-- Map Placeholder -->
+      <div class="rounded-2xl overflow-hidden shadow-xl border-2"
+       style="border-color:#b8860b; height:300px;">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6186617361627!2d106.7145681!3d-6.1817656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9707ba5d49f%3A0x937f46170fe8e5ee!2sWarung%20rafazka!5e0!3m2!1sid!2sid!4v1769076539935!5m2!1sid!2sid"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      loading="lazy">
+    </iframe>
+
+  </div>
+      </div><!-- Google Maps Button --> <a href="https://www.google.com/maps/search/Warung%20rafazka/@-6.181782245635986,106.71453857421875,17z?hl=id" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full font-body text-sm tracking-wider uppercase shadow-lg" style="background-color: #b8860b; color: #faf8f5; text-decoration: none;">
+       <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+       </svg><span>Buka di Google Maps</span> </a>
+     </div>
+    </div>
+   </section><!-- Gallery -->
+   <section id="gallery" class="py-20 px-4" style="background-color: #f5f0e8;">
+    <div class="max-w-5xl mx-auto text-center">
+     <p class="font-body text-sm tracking-[0.2em] uppercase mb-2" style="color: #8b7355;">Our Moments</p>
+     <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4" style="color: #2c2c2c;">Galeri Foto</h2>
+     <div class="ornament h-10 w-40 mx-auto mb-12"></div>
+     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  
+  <!-- Foto 1 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img src="images/couple7.png" alt="Galeri Foto 1" class="w-full h-full object-cover" loading="lazy" style="transition:transform 0.5s ease;">
+  </div>
+
+  <!-- Foto 2 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img
+      src="images/couple2.jpeg"
+      alt="Galeri Foto 2"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="transition:transform 0.5s ease;"
+    >
+  </div>
+
+  <!-- Foto 3 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img
+      src="images/couple3.jpeg"
+      alt="Galeri Foto 3"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="transition:transform 0.5s ease;"
+    >
+  </div>
+
+  <!-- Foto 4 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img
+      src="images/couple4.jpeg"
+      alt="Galeri Foto 4"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="transition:transform 0.5s ease;"
+    >
+  </div>
+
+  <!-- Foto 5 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img
+      src="images/couple5.jpeg"
+      alt="Galeri Foto 5"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="transition:transform 0.5s ease;"
+    >
+  </div>
+
+  <!-- Foto 6 -->
+  <div class="gallery-item rounded-xl overflow-hidden shadow-lg aspect-square">
+    <img
+      src="images/couple6.png"
+      alt="Galeri Foto 6"
+      class="w-full h-full object-cover"
+      loading="lazy"
+      style="transition:transform 0.5s ease; gallery-item:hover transform: scale(1.08);" 
+    >
+  </div>
+
+</div>
+
+    </div>
+    <section
+  id="page-kado"
+  class="min-h-screen flex items-center justify-center px-4"
+>
+  <div
+    class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-3xl shadow-2xl p-6 md:p-10"
+  >
+
+    <!-- KIRI : FOTO -->
+    <div class="flex justify-center">
+      <div class="w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="images/couple9.png"
+          alt="Pemberian Kado"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- KANAN : REKENING -->
+    <div class="text-center md:text-left">
+
+      <h2 class="font-display text-3xl md:text-4xl mb-6 text-center">
+        Kado Pernikahan
+      </h2>
+
+      <p class="text-sm mb-6 justify-center">
+        Doa restu Anda merupakan hadiah terindah bagi kami.
+        Namun apabila berkenan memberikan tanda kasih,
+        dapat melalui rekening berikut:
+      </p>
+
+      <!-- REKENING PRIA -->
+      <div class="border rounded-xl p-4 mb-4 shadow-sm text-center">
+        <p class="font-semibold">Mohamad Rizki S </p>
+        <p class="text-lg tracking-wider" id="rek-pria">
+          BCA,
+
+5490333390
+        </p>
+        <button
+          onclick="copyText('rek-pria')"
+          class="mt-2 text-sm px-4 py-2 rounded-full text-white"
+          style="background-color:#b8860b;"
+        >
+          Salin Rekening
+        </button>
+      </div>
+
+      <!-- REKENING WANITA -->
+      <div class="border rounded-xl p-4 mb-4 shadow-sm text-center">
+      <div class="border rounded-xl p-4 shadow-sm ">
+        <p class="font-semibold">Pratiwi Ayu Safitri</p>
+        <p class="text-lg tracking-wider" id="rek-wanita">
+          BCA, 7025219856
+        </p>
+        <button
+          onclick="copyText('rek-wanita')"
+          class="mt-2 text-sm px-4 py-2 rounded-full text-white"
+          style="background-color:#b8860b;"
+        >
+          Salin Rekening
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- RSVP / Guest Book -->
+   <section id="rsvp" class="py-20 px-4" style="background-color: #faf8f5;">
+    <div class="max-w-2xl mx-auto text-center">
+     <p class="font-body text-sm tracking-[0.2em] uppercase mb-2" style="color: #8b7355;">RSVP</p>
+     <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4" style="color: #2c2c2c;">Buku Tamu</h2>
+     <div class="ornament h-10 w-40 mx-auto mb-12"></div>
+     <form id="guestbook-form" class="glass-card rounded-2xl p-8 shadow-lg text-left mb-12" style="background-color: rgba(255,255,255,0.9); border: 1px solid rgba(184,134,11,0.2);">
+      <div class="mb-6"><label for="guest-name" class="block font-body text-sm font-medium mb-2" style="color: #2c2c2c;">Nama Lengkap</label> <input type="text" id="guest-name" required class="w-full px-4 py-3 rounded-lg border font-body focus:outline-none focus:ring-2 transition-all" style="border-color: #d4c5b0; background-color: #faf8f5; color: #2c2c2c;" placeholder="Masukkan nama Anda">
+      </div>
+      <div class="mb-6"><label for="guest-message" class="block font-body text-sm font-medium mb-2" style="color: #2c2c2c;">Ucapan &amp; Doa</label> <textarea id="guest-message" rows="4" required class="w-full px-4 py-3 rounded-lg border font-body focus:outline-none focus:ring-2 transition-all resize-none" style="border-color: #d4c5b0; background-color: #faf8f5; color: #2c2c2c;" placeholder="Tulis ucapan dan doa untuk kedua mempelai"></textarea>
+      </div>
+      <div class="mb-8"><label class="block font-body text-sm font-medium mb-3" style="color: #2c2c2c;">Konfirmasi Kehadiran</label>
+       <div class="flex flex-wrap gap-3"><label class="flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer transition-all" style="background-color: #f5f0e8; border: 1px solid #d4c5b0;"> <input type="radio" name="attendance" value="hadir" class="accent-current" style="accent-color: #b8860b;"> <span class="font-body text-sm" style="color: #2c2c2c;">Hadir</span> </label> <label class="flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer transition-all" style="background-color: #f5f0e8; border: 1px solid #d4c5b0;"> <input type="radio" name="attendance" value="tidak_hadir" class="accent-current" style="accent-color: #b8860b;"> <span class="font-body text-sm" style="color: #2c2c2c;">Tidak Hadir</span> </label> <label class="flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer transition-all" style="background-color: #f5f0e8; border: 1px solid #d4c5b0;"> <input type="radio" name="attendance" value="belum_tahu" class="accent-current" style="accent-color: #b8860b;"> <span class="font-body text-sm" style="color: #2c2c2c;">Belum Tahu</span> </label>
+       </div>
+      </div><button type="submit" id="submit-btn" class="btn-primary w-full py-4 rounded-full font-body text-sm tracking-widest uppercase shadow-lg transition-all disabled:opacity-50" style="background-color: #b8860b; color: #faf8f5;"> Kirim Ucapan </button>
+     </form><!-- Guest Messages -->
+     <div class="text-left">
+      <h3 class="font-display text-2xl font-semibold mb-6 text-center" style="color: #2c2c2c;">Ucapan dari Tamu</h3>
+      <div id="messages-container" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+       <p class="text-center font-body py-8" style="color: #8b7355;">Jadilah yang pertama memberikan ucapan! 💐</p>
+      </div>
+      <p id="message-count" class="text-center font-body text-sm mt-4" style="color: #8b7355;"></p>
+      <button  id="load-more-btn"
+  class="mx-auto mt-4 block px-5 py-2 rounded-full text-sm"
+  style="background:#b8860b;color:white;display:none"
+>
+  Muat lebih banyak
+</button>
+
+     </div>
+    </div>
+   </section><!-- Thank You -->
+   <section
+  id="terimakasih"
+  class="relative flex items-center justify-center min-h-screen text-center"
+  style="
+    background-image: url('images/couple7.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  "
+>
+  <!-- overlay gelap agar teks terbaca -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- KONTEN -->
+  <div class="relative z-10 px-6 max-w-xl text-white animate-fade-in">
+    <h2 class="font-display text-4xl md:text-5xl mb-6">
+      Terima Kasih
+    </h2>
+
+    <p class="text-base md:text-lg leading-relaxed mb-8">
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami
+      apabila Bapak/Ibu/Saudara/i berkenan hadir
+      dan memberikan doa restu.
+    </p>
+
+    <p class="font-semibold text-lg">
+      Rizki &amp; Tiwi
+    </p>
+  </div>
+</section>
+
+   <footer class="py-8 px-4 text-center" style="background-color: #2c2c2c;">
+    <p class="font-body text-sm" style="color: #8b7355;">Made with 💝 for a beautiful wedding</p>
+   </footer><!-- Navigation -->
+   <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+    <div class="glass-card flex gap-1 px-2 py-2 rounded-full shadow-xl" style="background-color: rgba(255,255,255,0.95); border: 1px solid rgba(184,134,11,0.3);"><button onclick="scrollToSection('couple')" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" title="Mempelai"> <span class="text-lg">💑</span> </button> <button onclick="scrollToSection('event')" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" title="Acara"> <span class="text-lg">📅</span> </button> <button onclick="scrollToSection('gallery')" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" title="Galeri"> <span class="text-lg">📸</span> </button> <button onclick="scrollToSection('rsvp')" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110" title="RSVP"> <span class="text-lg">📝</span> </button>
+    </div>
+   </nav>
+  </div>
+  
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="js/firebase-init.js"></script> <!-- initApp & db -->
+<script src="js/app.js"></script>        <!-- guestbook -->
+<script src="js/music.js"></script>        <!-- music -->
+
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c25e77f1195b5ba',t:'MTc2OTE1Njc2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+</script>
+<audio id="bg-music" loop>
+  <source src="music/nadin.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-btn">🔇</button>
+</body>
+</html>

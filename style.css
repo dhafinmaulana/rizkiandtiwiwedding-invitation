@@ -1,0 +1,446 @@
+/* ===============================
+   RESET
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   SISTEM PAGE (WAJIB)
+================================ */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.page.active {
+  display: block;
+}
+
+/* HANYA COVER YANG DI-TENGAH */
+#page1.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ===============================
+   PAGE 1 – COVER
+================================ */
+.invitation {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 24px 20px 32px;
+  text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background: url("images/background.jfif") center / cover no-repeat;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.invitation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.invitation > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* TEXT */
+.welcome {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.names {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.date {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* COUPLE */
+.couple-area {
+  position: relative;
+  max-width: 280px;
+  margin: 0 auto 40px;
+}
+
+.couple-img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* FLOWER */
+.flower-img {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 260px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.countdown div {
+  background: #f3efe9;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.countdown span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.countdown small {
+  font-size: 10px;
+  color: #666;
+}
+
+/* GUEST */
+.guest-box {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(4px);
+}
+
+.guest-title {
+  font-size: 12px;
+  color: #555;
+}
+
+.guest-name {
+  font-size: 10px;
+  color: #222;
+}
+
+.guest-name span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  user-select: none;
+  animation: fadeSlide 1.2s ease forwards;
+}
+
+/* BUTTON */
+.open-btn {
+  background: #e7c6a5;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.open-btn:hover {
+  background: #ddb78f;
+}
+
+/* ===============================
+   PAGE 2 – ISI UNDANGAN
+================================ */
+#page2 {
+  background: #f6f1eb;
+  display: block;
+  padding: 0;
+}
+
+.page2-wrapper {
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+/* POLAROID */
+.photo-polaroid {
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transform: rotate(-2deg);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.photo-polaroid img {
+  width: 100%;
+  max-width: 260px;   /* ⬅️ ini yang mengecilkan */
+  margin: 0 auto;
+  display: block;
+  border-radius: 4px;
+}
+
+
+/* TEXT PAGE 2 */
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.couple-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.couple-name span {
+  display: block;
+  font-size: 18px;
+  font-style: italic;
+}
+/* LABEL STYLE (SEPERTI CONTOH GAMBAR) */
+.address-label,
+.date-label {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 10px auto;
+
+  background: #f1c9a5; /* krem-oranye lembut */
+  color: #3a2a20;
+
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+
+  border-radius: 4px; /* hampir kotak */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* khusus alamat biar tidak kepanjangan */
+.address-label {
+  max-width: 300px;
+}
+
+.invite-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.invite-text > * {
+  animation: fadeUp 0.8s ease both;
+}
+.invite-text > *:nth-child(2) { animation-delay: .2s; }
+.invite-text > *:nth-child(3) { animation-delay: .4s; }
+
+.address-label,
+.date-label {
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+/* .event-date {
+  font-size: 16px;
+}
+
+.event-address {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 20px 0;
+} */
+
+/* MAP BUTTON */
+.map-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 25px;
+  background: #7b3f3f;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: #5e2f2f;
+}
+
+/* ===============================
+   INVITATION PAGE 2
+================================ */
+.invitation-page2 {
+  background: url("back1.png") center / cover no-repeat;
+}
+/* .invitation-page2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+} */
+
+.canva-wrapper {
+  width: 100%;
+  max-width: 420px;
+
+  /* tinggi fleksibel */
+  min-height: 100vh;       /* minimal 1 layar HP */
+  height: auto;
+
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.canva-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  border: none;
+}
+
+
+
+
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (min-width: 768px) {
+  .invitation {
+    max-width: 480px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE CANVA EMBED
+================================ */
+
+/* pembungkus agar sejajar dengan undangan */
+.canva-container {
+  /*width: 100%;*/
+  display: flex;
+  justify-content: center;
+}
+
+/* wrapper utama Canva */
+.canva-wrapper {
+  width: 100%;
+  max-width: 420px;     /* sama seperti page 1 */
+  min-height: 100vh;
+  background: #fff;
+
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+/* iframe Canva */
+.canva-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  border: none;
+}
+
+/* ===============================
+   DESKTOP ADJUSTMENT
+================================ */
+@media (min-width: 768px) {
+  .canva-wrapper {
+    aspect-ratio: 4 / 5; /* lebih enak di desktop */
+  }
+}
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+
+
