@@ -141,3 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
     loadMessages();
   }
 });
+
+window.scrollToSection = function (id) {
+  const el = document.getElementById(id);
+  if (!el) {
+    console.warn("Section tidak ditemukan:", id);
+    return;
+  }
+
+  el.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+};
+
