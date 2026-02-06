@@ -1,31 +1,35 @@
-const music = document.getElementById("bg-music");
-const toggle = document.getElementById("musicToggle");
-const openBtn = document.getElementById("openInvitation");
+document.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("bg-music");
+  const openBtn = document.getElementById("openInvitation");
+  const toggle = document.getElementById("musicToggle");
 
-let musicStarted = false;
+  if (!music || !openBtn || !toggle) return;
 
-openBtn.addEventListener("click", () => {
-  // tampilkan page 2 di sini (kalau ada)
-  toggle.style.display = "inline-block";
+  let started = false;
+  music.volume = 0.6;
 
-  if (!musicStarted) {
-    music.volume = 0.6;
-    music.play().then(() => {
-      musicStarted = true;
+  openBtn.addEventListener("click", () => {
+    toggle.style.display = "inline-block";
+
+    if (!started) {
+      music.play()
+        .then(() => {
+          started = true;
+          toggle.textContent = "🔊";
+        })
+        .catch(() => {
+          toggle.textContent = "🔇";
+        });
+    }
+  });
+
+  toggle.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
       toggle.textContent = "🔊";
-    }).catch(err => {
-      console.log("Audio blocked:", err);
-    });
-  }
+    } else {
+      music.pause();
+      toggle.textContent = "🔇";
+    }
+  });
 });
-
-toggle.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    toggle.textContent = "🔊";
-  } else {
-    music.pause();
-    toggle.textContent = "🔇";
-  }
-});
-
