@@ -58,27 +58,19 @@ document.addEventListener("contextmenu", e => e.preventDefault());
 //     window.location.href = "page2.html";
 //   }, 800);
 // }
-const openBtn = document.getElementById("openInvitation");
-const music = document.getElementById("bg-music");
+/* ======================
+   OPEN INVITATION (KUNCI)
+====================== */
+document.getElementById("openInvitation")
+  .addEventListener("click", () => {
 
-openBtn.addEventListener("click", () => {
-  // PLAY MUSIC = VALID USER INTERACTION
-  music.volume = 0.6;
-
-  music.play().then(() => {
-    // simpan izin agar page 2 tahu musik boleh lanjut
+    // 🔑 INI YANG DIBUTUHKAN CHROME
     localStorage.setItem("musicAllowed", "true");
 
-    // animasi / delay kecil
     document.body.classList.add("fade-out");
 
     setTimeout(() => {
       window.location.href = "page2.html";
     }, 800);
-  }).catch(err => {
-    console.log("Music blocked:", err);
-    window.location.href = "page2.html";
   });
-});
-
 
