@@ -48,16 +48,37 @@ typeEffect();
 document.addEventListener("contextmenu", e => e.preventDefault());
 
 
-function openInvitation() {
-  // simpan izin user interaction
-  localStorage.setItem("allowMusic", "true");
+// function openInvitation() {
+//   // simpan izin user interaction
+//   localStorage.setItem("allowMusic", "true");
 
-  document.body.classList.add("fade-out");
+//   document.body.classList.add("fade-out");
 
-  setTimeout(() => {
+//   setTimeout(() => {
+//     window.location.href = "page2.html";
+//   }, 800);
+// }
+const openBtn = document.getElementById("openInvitation");
+const music = document.getElementById("bg-music");
+
+openBtn.addEventListener("click", () => {
+  // PLAY MUSIC = VALID USER INTERACTION
+  music.volume = 0.6;
+
+  music.play().then(() => {
+    // simpan izin agar page 2 tahu musik boleh lanjut
+    localStorage.setItem("musicAllowed", "true");
+
+    // animasi / delay kecil
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = "page2.html";
+    }, 800);
+  }).catch(err => {
+    console.log("Music blocked:", err);
     window.location.href = "page2.html";
-  }, 800);
-}
-
+  });
+});
 
 
