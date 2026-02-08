@@ -5,24 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!music || !toggle) return;
 
   music.volume = 0.6;
-
-  if (localStorage.getItem("musicAllowed") === "true") {
-    setTimeout(() => {
-      music.play().then(() => {
-        toggle.textContent = "🔊";
-      }).catch(() => {
-        toggle.textContent = "🔇";
-      });
-    }, 300);
-  }
+  let playing = false;
 
   toggle.addEventListener("click", () => {
-    if (music.paused) {
-      music.play().catch(() => {});
-      toggle.textContent = "🔊";
+    if (!playing) {
+      music.play().then(() => {
+        toggle.textContent = "🔊";
+        playing = true;
+      }).catch(() => {
+        alert("Tap sekali lagi untuk memulai musik");
+      });
     } else {
       music.pause();
       toggle.textContent = "🔇";
+      playing = false;
     }
   });
 });
